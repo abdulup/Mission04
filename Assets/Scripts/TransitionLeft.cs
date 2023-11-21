@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class TransitionLeft : MonoBehaviour
 {
     private bool clicked = false;
+    MainManager mainManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class TransitionLeft : MonoBehaviour
         if (clicked)
         {
             gameObject.transform.position = new Vector3(gameObject.transform.position.x + 800 * Time.deltaTime, gameObject.transform.position.y, gameObject.transform.position.z);
-            Debug.Log(gameObject.transform.position.x);
+
             if (gameObject.transform.position.x > 1300)
             {
                 SceneManager.LoadScene(1);
@@ -33,7 +34,8 @@ public class TransitionLeft : MonoBehaviour
 
     public void Clicked()
     {
-        //StartCoroutine(LoadMainMenu());
+        //MainManager.SaveName();
         clicked = true;
+        //MainManager.SaveName();
     }
 }
